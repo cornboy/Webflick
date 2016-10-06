@@ -20,8 +20,6 @@
 var router = new geddy.RegExpRouter();
 
 router.get('/').to('Movies.index');
-router.get('/shows').to('Shows.index');
-router.get('/show').to('Shows.show');
 router.get('/stream').to('Movies.stream');
 router.get('/running').to('Movies.running');
 router.get('/kill').to('Movies.kill');
