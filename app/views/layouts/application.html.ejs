@@ -1,30 +1,7 @@
 <%= partial('layout_header'); %>
-  <script>
-
-    function setTheme(theme) {
-      var today = new Date(), expires = new Date();
-      expires.setTime(today.getTime() + (365*24*60*60*1000)); //expires in one year
-      document.cookie="theme=" + theme + ";expires=" + expires.toGMTString();
-      document.getElementById('themeCss').href=theme;
-    }
-
-    $.get("https://bootswatch.aws.af.cm/3/", function (data) {
-      var themesList = document.getElementById('themes');
-
-      //Define the default theme
-      themesList.innerHTML += '<li ' +'onclick="setTheme(\'' + "//netdna.bootstrapcdn.com/bootswatch/latest/darkly/bootstrap.min.css" + '\')"><a href="#">Default (Darkly)</a></li>';
-      themesList.innerHTML += '<li class=divider </li>';
-
-      data.themes.forEach(function(value){
-        themesList.innerHTML += '<li ' +'onclick="setTheme(\'' + value.cssCdn + '\')">'  +  '<a href="#">' + value.name + '</a></li>';
-      });
-    });
-  </script>
-
   <body>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
       <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -32,13 +9,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <a class="navbar-brand" href="/">th3.stream</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a class="btn-primary" href="/">Movies</a></li>
-            <li><a href="/shows">TV Shows</a></li>
+            <li class="active"><a href="/">Movies</a></li>
+            <li class="disabled"><a href="#">Music <span class="label label-default text-uppercase">Soon</span></a></li>
           </ul>
 
           <form class="navbar-form navbar-right" method="get" action="/" role="search">
@@ -47,7 +24,7 @@
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
               </span>
-            </div><!-- /input-group -->
+            </div>
           </form>
 
           <ul class="nav navbar-nav navbar-right">
@@ -80,13 +57,6 @@
                 <li><a href="/?genre=thriller&sort=seeds">Thriller</a></li>
                 <li><a href="/?genre=war&sort=seeds">War</a></li>
                 <li><a href="/?genre=western&sort=seeds">Western</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Themes <b class="caret"></b>
-              </a>
-              <ul id="themes" class="dropdown-menu">
               </ul>
             </li>
             <li><a href="/running">Now Playing</a></li>
