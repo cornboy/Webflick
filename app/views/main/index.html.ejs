@@ -2,24 +2,24 @@
   <% if ( movies && movies.length > 0) { %>
     <div class="row">
     <% for (var i=0; i < movies.length; i++) { %>
-        <div class="col-sm-4">  
-		
+        <div class="col-sm-4">
+
 		<div class="panel panel-default">
 		<div class="panel-heading">
 		<h3 class="panel-title"><%= movies[i].title %></h3></div>
 		<div class="panel-body">
-        
+
 		<div class="media movie">
         <%if (movies[i].state=='ok'){%><a class="pull-left" href="<%= baseURL %>/stream?id=<%= movies[i].id %>&file=<%= encodeURIComponent(movies[i].torrents[0].url) %>">
         <img class="media-object" src="<%= movies[i].medium_cover_image %>" alt="<%= movies[i].title %>"></a><%}else{%>
             <div class="pull-left"><img class=" media-object" src="<%= movies[i].medium_cover_image %>" alt="<%= movies[i].title %>"></div>
             <%}%>
-		
+
 		<div class="media-body">
         <%if (movies[i].state=='ok'){%>
             <p><div class="btn-group">
                 <a href="#" class="btn btn-sm btn-warning"><span class="glyphicon glyphicon-play"></span> PLAY MOVIE</a>
-                <a href="#" class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                <div class="btn btn-sm btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></div>
                 <ul class="dropdown-menu">
                     <%for(x=0;x<movies[i].torrents.length;x++){%>
                     <li><a href="<%= baseURL %>/stream?id=<%= movies[i].id %>&file=<%= encodeURIComponent(movies[i].torrents[x].url) %>"><%=movies[i].torrents[x].quality%></a></li>
@@ -34,7 +34,7 @@
 		Genre: <%= movies[i].genres %><br>
         <%if (movies[i].state=='ok'){%>Health: <span class="label label-default">S: <%= movies[i].torrents[0].seeds %></span> <span class="label label-default">P: <%= movies[i].torrents[0].peers %></span><%}%>
 		</div>
-		
+
 		</div></div></div></div></div>
 
       <% if (i % 3 === 2) { %>
