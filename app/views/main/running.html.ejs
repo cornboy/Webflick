@@ -9,12 +9,12 @@
       			</div>
       			<div class="panel-body">
         			<div class="media movie">
-                <a class="pull-left" target="_blank" href="<%= baseURL %>/stream?file=<%= encodeURIComponent(streams[i].torrent) %>">
+                <a class="pull-left" target="_blank" href="<%= baseURL %>/stream?id=<%= movies[i].id %>&file=<%= encodeURIComponent(streams[i].torrent) %>">
                 <img class="media-object" src="<%= streams[i].data.cover %>" alt="<%= streams[i].data.title %>">
                 </a>
 
           			<div class="media-body">
-                  <p><a class="btn btn-sm btn-warning" target="_blank" href="<%= baseURL %>/stream?file=<%= encodeURIComponent(streams[i].torrent) %>"><span class="glyphicon glyphicon-play"></span> PLAY MOVIE</a></p>
+                  <p><a class="btn btn-sm btn-warning" target="_blank" href="<%= baseURL %>/stream?id=<%= movies[i].id %>&file=<%= encodeURIComponent(streams[i].torrent) %>"><span class="glyphicon glyphicon-play"></span> PLAY MOVIE</a></p>
                   <p><a class="btn btn-xs btn-danger" href="/kill?pid=<%= streams[i].pid %>"><span class="glyphicon glyphicon-remove"></span> DELETE</a></p>
             			<div class="well well-sm">
             			Seeds: <%= streams[i].data.seeds %>
