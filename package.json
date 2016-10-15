@@ -17,9 +17,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "preinstall": "npm install -g geddy peerflix",
-    "postinstall": "geddy gen secret",
-    "start": "geddy"
+    "preinstall": "sh ./sh/preinstall.sh",
+    "postinstall": "sh ./sh/postinstall.sh",
+    "start": "sh ./sh/start.sh",
+    "stop": "sh ./sh/stop.sh"
   },
   "engines": {
     "node": ">=0.10.39"
