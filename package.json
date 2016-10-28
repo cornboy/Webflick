@@ -3,17 +3,17 @@
   "version": "0.0.1",
   "author": "",
   "dependencies": {
-    "adm-zip": "0.4.7",
+    "adm-zip": "0.4.4",
     "bcrypt-nodejs": "0.0.3",
-    "child": "0.0.3",
-    "getport": "0.1.0",
-    "jake": "8.0.15",
-    "moment": "2.15.2",
-    "opensrt_js": "0.1.1",
-    "passport": "0.3.2",
-    "request": "2.76.0",
-    "rimraf": "2.5.4",
-    "underscore": "1.8.3"
+    "child": "*",
+    "getport": "0.1.x",
+    "jake": "0.5.x",
+    "moment": "*",
+    "opensrt_js": "0.0.16",
+    "passport": "0.1.x",
+    "request": "2.34.x",
+    "rimraf": "2.2.8",
+    "underscore": "1.7.0"
   },
   "devDependencies": {},
   "scripts": {
