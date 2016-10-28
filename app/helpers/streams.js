@@ -14,7 +14,7 @@ exports.create = function(self, streamURL, hostname, params) {
       self.redirect('/');
     } else {
       var osSpecificCommand = isWin ? 'cmd' : 'peerflix';
-      var osSpecificArgs = isWin ? ['/c', 'peerflix', decodeURIComponent(params.file),  '--port=' + port] : [decodeURIComponent(params.file),  '--port=' + port, '-r', '-f /root/torrent'];
+      var osSpecificArgs = isWin ? ['/c', 'peerflix', decodeURIComponent(params.file),  '--port=' + port] : [decodeURIComponent(params.file),  '--port=' + port, '-r', '-f /root/torrent/'];
       var childStream = require('child')({
         command: osSpecificCommand,
         args: osSpecificArgs,
