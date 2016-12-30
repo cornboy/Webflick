@@ -49,7 +49,7 @@ if (params.keywords && params.keywords !=='') {
   }
 
     // Set request URL
-  yify.url = 'https://yts.ag/api/v2/list_movies.json?limit=18&quality=720p&sort_by=';
+  yify.url = 'https://popapi.herokuapp.com/api/v2/list_movies.json?limit=18&sort_by=';
   yify.url += yify.sort + '&genre=' + yify.genre + '&query_term=' + yify.search + yify.set;
 
   return yify;

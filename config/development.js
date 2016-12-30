@@ -20,8 +20,8 @@ var config = {
   appName: 'Geddy App (development)'
 , detailedErrors: true
 , debug: true
-, hostname: null
-, port: 4000
+, hostname: "0.0.0.0"
+, port: process.env.PORT || 4000
 , model: {
     defaultAdapter: 'filesystem'
   }

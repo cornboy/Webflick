@@ -13,7 +13,9 @@
     "passport": "0.1.x",
     "request": "2.34.x",
     "rimraf": "2.2.8",
-    "underscore": "1.7.0"
+    "underscore": "1.7.0",
+    "geddy": "0.11.x"
+  
   },
   "devDependencies": {},
   "scripts": {
@@ -23,6 +25,7 @@
     "stop": "sh ./sh/stop.sh"
   },
   "engines": {
-    "node": ">=0.10.39"
+    "node": "0.10.x",
+    "npm": "1.3.x"
   }
 }
